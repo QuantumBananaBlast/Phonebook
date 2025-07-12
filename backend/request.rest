@@ -1,0 +1,55 @@
+// request to delete a person with the id 2
+DELETE http://localhost:3001/api/persons/2
+
+
+
+
+###
+// Request do create a new person (POST NEW PERSON)
+POST http://localhost:3001/api/persons 
+Content-Type : application/json
+
+{
+    "name": "Test",
+    "number": "12345"
+}
+
+###
+// POST NEW PERSON with already existing name
+POST http://localhost:3001/api/persons 
+Content-Type : application/json
+
+{
+      "name": "Arto Hellas", 
+      "number": "040-123456"
+}
+
+###
+// POST NEW PERSON with wrong body - number misses
+POST http://localhost:3001/api/persons 
+Content-Type : application/json
+
+{
+    "name": "Test",
+    "number": ""
+}
+
+###
+//POST NEW PERSON with wrong body - name misses
+POST http://localhost:3001/api/persons 
+Content-Type : application/json
+
+{
+    "name": "",
+    "number": "12345"
+}
+
+###
+// POST NEW PERSON with wrong body - name and number misses
+POST http://localhost:3001/api/persons 
+Content-Type : application/json
+
+{
+    "name": "",
+    "number": ""
+}
